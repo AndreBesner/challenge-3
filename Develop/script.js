@@ -6,14 +6,13 @@ var includeLower ; // boolean value for uppercase being true, the next several v
 var includeUpper ;
 var includeNumber;
 var includeSpecial ;
-var numberOfSelections = 0 ; //check user input to ensure they have selected on char type
-var workingCharacters = ""; //this will be the actual character set the password is generated from
-var alphabetLower = "abcdefghijklmnopqrstuvwxyz" ;
+var numberOfSelections = 0 ; // check user input to ensure they have selected at least one char type
+var workingCharacters = ""; // this will be the actual character set the password is generated from
+var alphabetLower = "abcdefghijklmnopqrstuvwxyz" ; // character sets to generate password from I tried to use ones most programs seems to accept
 var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
 var numberList = "0123456789" ;
 var specialCharacterList = "!@#$%&<>/?[]{}|" ;
-
-// length param
+// length parameter for password
 function findLength(){
   passLength = prompt("Please enter password length", "8 -> 128");
   if(passLength < 8 || passLength > 128){
@@ -85,8 +84,7 @@ function findSpecial(){
     findSpecial();
   }
 }
-
-
+// This actually puts together the lists of characters the user selected with previous logic
 function buildList(){
   if(includeLower){
     workingCharacters += alphabetLower ;
@@ -101,8 +99,6 @@ function buildList(){
     workingCharacters += specialCharacterList ;
   }
 }
-
-
 // The actual function call that invokes when user pushes red button
 function passwordCriteria(){
   findLength();
@@ -116,7 +112,7 @@ function passwordCriteria(){
     passwordCriteria();
   }
   buildList();
-  window.alert(workingCharacters);
+  window.alert(workingCharacters);                                                                    // debug to be removed before prod
 }
 
 
