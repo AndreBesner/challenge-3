@@ -37,7 +37,7 @@ function findCharType(){
 }
 // include special characters?
 function findSpecial(){
-  includeSpecial = prompt("Would you like to include special characters? (!@#$%^&*)", "yes/no");
+  includeSpecial = prompt("Would you like to include special characters and numbers? 0-9, (!@#$%^&)", "yes/no");
   if(includeSpecial == "yes"){
     includeSpecial = true;
   }
@@ -57,6 +57,15 @@ function passwordCriteria(){
   findSpecial();
 }
 
+// hard coded arrays for the range of values to try and make my life easier
+var alphabetLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var alphabetUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var specialCharacters = ["!", "@", "#", "$", "^", "&"];
+var numericCharacters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 0];
+var randomNumber; // declaring this variable in order to have a little int to hold random array index 
+
+
+// adding together arrays
 
 
 
