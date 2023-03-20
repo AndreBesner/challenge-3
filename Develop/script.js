@@ -37,7 +37,7 @@ function findCharType(){
 }
 // include special characters?
 function findSpecial(){
-  includeSpecial = prompt("Would you like to include special characters and numbers? 0-9, (!@#$%^&)", "yes/no");
+  includeSpecial = prompt("Would you like to include uppercase characters, special characters, and numbers? 0-9, (!@#$%^&)", "yes/no");
   if(includeSpecial == "yes"){
     includeSpecial = true;
   }
@@ -61,11 +61,23 @@ function passwordCriteria(){
 var alphabetLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var alphabetUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var specialCharacters = ["!", "@", "#", "$", "^", "&"];
-var numericCharacters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 0];
+var numericCharacters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var randomNumber; // declaring this variable in order to have a little int to hold random array index 
+var workingCharacters; //this will be the actual character set the password is generated from
 
+// adding together arrays depedning on user selection of password complexity
+if(characterTypes && includeSpecial){
+var workingCharacters = alphabetLower.concat(alphabetUpper, specialCharacters, numericCharacters);
+}
+else if(!characterTypes && includeSpecial){
 
-// adding together arrays
+}
+else if(!characterTypes && !includeSpecial){
+
+}
+else{
+
+}
 
 
 
