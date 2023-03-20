@@ -12,6 +12,7 @@ var alphabetLower = "abcdefghijklmnopqrstuvwxyz" ; // character sets to generate
 var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
 var numberList = "0123456789" ;
 var specialCharacterList = "!@#$%&<>/?[]{}|" ;
+var genPassword = "" ; // whatever this code spits out
 // length parameter for password
 function findLength(){
   passLength = prompt("Please enter password length", "8 -> 128");
@@ -99,6 +100,13 @@ function buildList(){
     workingCharacters += specialCharacterList ;
   }
 }
+// this actually builds a password using the user selected character sets, and the user selected length
+// it essentially takes list and password length, goes to a random index then returns that character back into a string
+function makePassword(){
+  for (var i = 0 ; i < passLength ; i++){
+    genPassword += workingCharacters.charAt(Math.floor(Math.random * workingCharacters.length));
+  }
+}
 // The actual function call that invokes when user pushes red button
 function passwordCriteria(){
   findLength();
@@ -112,8 +120,15 @@ function passwordCriteria(){
     passwordCriteria();
   }
   buildList();
-  window.alert(workingCharacters);                                                                    // debug to be removed before prod
+  window.alert(workingCharacters);                                                                                // debug to be removed before prod
+  makePassword();
+  window.alert(genPassword);
 }
+
+
+
+
+
 
 
 
