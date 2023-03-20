@@ -1,14 +1,17 @@
 // Assignment code here
 
-
 // Variables for password criteria
-var passLength = 0 ;
-var includeLower ;
+var passLength = 0 ; // length for password
+var includeLower ; // boolean value for uppercase being true, the next several variables follow same pattern
 var includeUpper ;
 var includeNumber;
 var includeSpecial ;
-var numberOfSelections = 0 ;
-// functions to call user input to fill password criteria parameters
+var numberOfSelections = 0 ; //check user input to ensure they have selected on char type
+var workingCharacters = ""; //this will be the actual character set the password is generated from
+var alphabetLower = "abcdefghijklmnopqrstuvwxyz" ;
+var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
+var numberList = "0123456789" ;
+var specialCharacterList = "!@#$%&<>/?[]{}|" ;
 
 // length param
 function findLength(){
@@ -24,7 +27,7 @@ function findLength(){
 }
 // lowercase?
 function findLower(){
-  includeLower = prompt("Would you like your password to include lowercaser characters?")
+  includeLower = prompt("Would you like your password to include lowercase characters?", "yes/no");
   if(includeLower == "no"){
     includeLower = false ;
   }
@@ -39,7 +42,7 @@ function findLower(){
 }
 // uppercase?
 function findUpper(){
-  includeUpper = prompt("Would you like your password to include uppercase characters?")
+  includeUpper = prompt("Would you like your password to include uppercase characters?", "yes/no");
   if(includeUpper == "no"){
     includeUpper = false ;
   }
@@ -54,7 +57,7 @@ function findUpper(){
 }
 // include numbers?
 function findNumber(){
-  includeNumber = prompt("Would you like your password to include lowercaser characters")
+  includeNumber = prompt("Would you like your password to include numbers?", "yes/no");
   if(includeNumber == "no"){
     includeNumber = false ;
   }
@@ -69,7 +72,7 @@ function findNumber(){
 }
 // include special characters?
 function findSpecial(){
-  includeSpecial = prompt("Would you like your password to include lowercaser characters")
+  includeSpecial = prompt("Would you like your password to include special characters?", "yes/no");
   if(includeSpecial == "no"){
     includeSpecial = false ;
   }
@@ -84,6 +87,21 @@ function findSpecial(){
 }
 
 
+function buildList(){
+  if(includeLower){
+    workingCharacters += alphabetLower ;
+  }
+  if(includeUpper){
+    workingCharacters += alphabetUpper;
+  }
+  if(includeNumber){
+    workingCharacters += numberList ;
+  }
+  if(includeSpecial){
+    workingCharacters += specialCharacterList ;
+  }
+}
+
 
 // The actual function call that invokes when user pushes red button
 function passwordCriteria(){
@@ -97,15 +115,10 @@ function passwordCriteria(){
     window.alert("You need to make at least one selection, this is just an empty password!");
     passwordCriteria();
   }
+  buildList();
+  window.alert(workingCharacters);
 }
 
-// hard coded arrays for the range of values to try and make my life easier
-var alphabetLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var alphabetUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var specialCharacters = ["!", "@", "#", "$", "^", "&"];
-var numericCharacters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var randomNumber; // declaring this variable in order to have a little int to hold random array index 
-var workingCharacters; //this will be the actual character set the password is generated from
 
 
 
