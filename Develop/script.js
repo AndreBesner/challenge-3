@@ -132,6 +132,7 @@ function passwordCriteria(){
   window.alert("Your selected character set is: " + workingCharacters);                                                                               
   makePassword();
   window.alert("Your generated password is: " + genPassword);
+  window.alert("Please refresh the page to generate a new password!");
 }
 
 // Get references to the #generate element
