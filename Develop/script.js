@@ -101,7 +101,7 @@ function buildList(){
   }
 }
 // this actually builds a password using the user selected character sets, and the user selected length
-// it essentially takes list and password length, goes to a random index then returns that character back into a string
+// it essentially takes selected characters list and password length, goes to a random index then returns that character back into a string one by one
 function makePassword(){
   for (var i = 0 ; i < passLength ; i++){
     genPassword += workingCharacters.charAt(Math.floor(Math.random() * workingCharacters.length));
@@ -140,7 +140,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = genPassword; // was generatePassword() but I changed it to just match the variable my previous function made
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
