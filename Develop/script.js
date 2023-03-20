@@ -104,7 +104,7 @@ function buildList(){
 // it essentially takes list and password length, goes to a random index then returns that character back into a string
 function makePassword(){
   for (var i = 0 ; i < passLength ; i++){
-    genPassword += workingCharacters.charAt(Math.floor(Math.random * workingCharacters.length));
+    genPassword += workingCharacters.charAt(Math.floor(Math.random() * workingCharacters.length));
   }
 }
 // The actual function call that invokes when user pushes red button
