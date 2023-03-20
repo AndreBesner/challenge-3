@@ -13,6 +13,7 @@ var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
 var numberList = "0123456789" ;
 var specialCharacterList = "!@#$%&<>/?[]{}|" ;
 var genPassword = "" ; // whatever this code spits out
+
 // length parameter for password
 function findLength(){
   passLength = prompt("Please enter password length", "8 -> 128");
@@ -25,6 +26,7 @@ function findLength(){
     findLength();
   }
 }
+
 // lowercase?
 function findLower(){
   includeLower = prompt("Would you like your password to include lowercase characters?", "yes/no");
@@ -40,6 +42,7 @@ function findLower(){
     findLower();
   }
 }
+
 // uppercase?
 function findUpper(){
   includeUpper = prompt("Would you like your password to include uppercase characters?", "yes/no");
@@ -55,6 +58,7 @@ function findUpper(){
     findUpper();
   }
 }
+
 // include numbers?
 function findNumber(){
   includeNumber = prompt("Would you like your password to include numbers?", "yes/no");
@@ -70,6 +74,7 @@ function findNumber(){
     findNumber();
   }
 }
+
 // include special characters?
 function findSpecial(){
   includeSpecial = prompt("Would you like your password to include special characters?", "yes/no");
@@ -85,6 +90,7 @@ function findSpecial(){
     findSpecial();
   }
 }
+
 // This actually puts together the lists of characters the user selected with previous logic
 function buildList(){
   if(includeLower){
@@ -100,6 +106,7 @@ function buildList(){
     workingCharacters += specialCharacterList ;
   }
 }
+
 // this actually builds a password using the user selected character sets, and the user selected length
 // it essentially takes selected characters list and password length, goes to a random index then returns that character back into a string one by one
 function makePassword(){
@@ -107,6 +114,7 @@ function makePassword(){
     genPassword += workingCharacters.charAt(Math.floor(Math.random() * workingCharacters.length));
   }
 }
+
 // The actual function call that invokes when user pushes red button
 function passwordCriteria(){
   findLength();
@@ -114,26 +122,17 @@ function passwordCriteria(){
   findUpper();
   findNumber();
   findSpecial();
+
   // this ensures the user selected at least one character type to build array with
   if(numberOfSelections < 1){
     window.alert("You need to make at least one selection, this is just an empty password!");
     passwordCriteria();
   }
   buildList();
-  window.alert(workingCharacters);                                                                                // debug to be removed before prod
+  window.alert("Your selected character set is: " + workingCharacters);                                                                               
   makePassword();
-  window.alert(genPassword);
+  window.alert("Your generated password is: " + genPassword);
 }
-
-
-
-
-
-
-
-
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
