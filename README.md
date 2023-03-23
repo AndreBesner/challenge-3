@@ -26,6 +26,10 @@ https://github.com/AndreBesner/challenge-3
 
 Just click the generate password button and follow the dialogue box promps. If you run into an issue just refresh the page.
 
+Site should look like this:
+
+![Image of Working site](/Assets/Working%20Site.JPG "Image of Working Site")
+
 ## Credits
 
 This code was built on the foundation provided by The Coding Bootcamp (https://github.com/coding-boot-camp)
