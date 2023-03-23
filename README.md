@@ -36,7 +36,7 @@ This code was built on the foundation provided by The Coding Bootcamp (https://g
 
 Using this code specifically (https://github.com/coding-boot-camp/friendly-parakeet) Thanks Xandromus
 
-This project could not have been finished without help from W3 schools and Mozilla Web 
+This project could not have been finished without help from Daler Singh (bootcamp instructor, Adam Nyx (bootcamp instructor), W3 schools, and Mozilla Web 
 
 https://www.w3schools.com/
 
