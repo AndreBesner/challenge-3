@@ -12,7 +12,7 @@ var alphabetLower = "abcdefghijklmnopqrstuvwxyz" ; // character sets to generate
 var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
 var numberList = "0123456789" ;
 var specialCharacterList = "!@#$%&<>/?[]{}|" ;
-var genPassword = "" ; // whatever this code spits out
+var genPassword = "" ; // this will be final generated password
 
 // length parameter for password
 function findLength(){
@@ -27,6 +27,8 @@ function findLength(){
   }
 }
 
+// I totally understand the function of the following pieces of code can be achieved with the confirm() command
+// I just prefer how this one looks 
 // lowercase?
 function findLower(){
   includeLower = prompt("Would you like your password to include lowercase characters?", "yes/no");
